@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useTableData } from "./api/TableDataContext";
 
 const Detail = () => {
+  const { addTableData } = useTableData();
   const [name, setName] = useState("");
   const [collegeName, setCollegeName] = useState("");
   const [email, setEmail] = useState("");
@@ -20,6 +22,8 @@ const Detail = () => {
       branch,
       year,
     };
+    // sending as prop
+    addTableData(formData);
 
     // Reseting form
     setName("");

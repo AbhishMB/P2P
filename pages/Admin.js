@@ -1,6 +1,8 @@
 import React from "react";
+import { useTableData } from "./api/TableDataContext";
 
 const Admin = () => {
+  const { tableData } = useTableData();
 
   return (
     <>
