@@ -1,5 +1,17 @@
-import '@/styles/globals.css'
+import '../styles/globals.css'
+import Navbar from 'components/Navbar.js'
+import '@fontsource-variable/nunito-sans';
+import '@fontsource/special-elite';
+import { TableDataProvider } from './api/TableDataContext';
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+
+function MyApp({ Component, pageProps }) {
+  return <>
+  <Navbar/>
+ <TableDataProvider>
+      <Component {...pageProps} />
+    </TableDataProvider>
+  </>
 }
+
+export default MyApp
